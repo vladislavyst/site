@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "^/$",
+      "dest": "/static/index.html"
+    },
+    {
+      "src": "^/success/?$",
+      "dest": "/static/success.html"
+    },
+    {
+      "src": "^/(.*)$",
+      "dest": "/static/$1"
+    }
+  ]
+}
