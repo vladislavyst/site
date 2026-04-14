@@ -116,7 +116,7 @@
       window.SUCCESS_PAGE_CONFIG = {
         lang: "no",
         pixelType: "fbp",
-        homeUrl: "{route:home}",
+        homeUrl: "/",
       };
     </script>
 
@@ -132,7 +132,7 @@
         }
 
         if (window.startPolling) {
-          window.startPolling('{route:check-lead}');
+          window.startPolling("/api/check-lead");
         }
       });
     </script>

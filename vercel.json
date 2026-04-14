@@ -10,6 +10,10 @@
       "dest": "/static/success.html"
     },
     {
+      "src": "^/api/(.*)$",
+      "dest": "/api/$1"
+    },
+    {
       "src": "^/(.*)$",
       "dest": "/static/$1"
     }
