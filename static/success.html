@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thank You for Registering</title>
+    <link rel="shortcut icon" href="assets/img/favicon.svg" type="image/x-icon">
+    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+    <link href="assets/css/success.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container" id="app">
+      <!-- Schritte -->
+      <div class="steps">
+        <div class="step active">
+          <span class="step-icon">✓</span>
+          <span id="stepRegistration">Registration</span>
+        </div>
+        <div class="step-separator"></div>
+        <div class="step processing step--loading">
+          <span class="step-icon step-icon--process">
+            <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 7V12L14.5 10.5
+                           M21 12C21 16.9706 16.9706 21 12 21
+                           C7.02944 21 3 16.9706 3 12
+                           C3 7.02944 7.02944 3 12 3
+                           C16.9706 3 21 7.02944 21 12Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span class="step-icon step-icon--error">
+            <svg class="loader-center__warning-svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 25">
+              <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="1.5">
+                <path d="M20.043 21H3.957c-1.538 0-2.5-1.664-1.734-2.997l8.043-13.988c.77-1.337 2.699-1.337 3.468 0l8.043 13.988C22.543 19.336 21.58 21 20.043 21ZM12 9v4" />
+                <path stroke-linejoin="round" d="m12 17.01l.01-.011" />
+              </g>
+            </svg>
+          </span>
+          <span class="step-icon step-icon--done">✓</span>
+          <span id="stepProcessing">Processing</span>
+        </div>
+        <div class="step-separator"></div>
+        <div class="step next step--success">
+          <span class="step-icon step-icon--wait">→</span>
+          <span class="step-icon step-icon--process">
+            <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 7V12L14.5 10.5
+                           M21 12C21 16.9706 16.9706 21 12 21
+                           C7.02944 21 3 16.9706 3 12
+                           C3 7.02944 7.02944 3 12 3
+                           C16.9706 3 21 7.02944 21 12Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span id="stepRedirect">Redirecting</span>
+        </div>
+      </div>
+      <!-- Hauptbereich: Card + Loader + Hinweis -->
+      <div class="grid">
+        <div class="info-card">
+          <h2 id="cardTitle" class="info-card__title title-base">Thank You for Registering!</h2>
+          <ul>
+            <li id="cardLoading1" class="info-card__loading-text text-base">✓ Your information is currently being processed.</li>
+            <li id="cardSuccess" class="info-card__success-text text-base">You will be redirected to the platform shortly.</li>
+            <li id="cardLoading2" class="info-card__loading-text text-base">✓ Please wait while we complete the setup.</li>
+          </ul>
+          <p id="errorText" class="info-card__error-text text-base"></p>
+        </div>
+        <button id="homeBtn" class="btn-back">Back to Home</button>
+        <div class="loader-wrap">
+          <div class="loader">
+            <!-- tracks -->
+            <div class="ring-track outer"></div>
+            <div class="ring-track middle"></div>
+            <div class="ring-track inner"></div>
+            <!-- colored arcs -->
+            <div class="ring-seg outer"></div>
+            <div class="ring-seg middle"></div>
+            <div class="ring-seg inner"></div>
+            <!-- center circle -->
+            <div class="loader-center" id="loaderCenter">
+              <svg class="loader-center__loading-svg" width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M40.0052 5.25H22.9952C13.1252 5.25 12.364 14.1225 17.6927 18.9525L45.3077 44.0475C50.6365 48.8775 49.8752 57.75 40.0052 57.75H22.9952C13.1252 57.75 12.364 48.8775 17.6927 44.0475L45.3077 18.9525C50.6365 14.1225 49.8752 5.25 40.0052 5.25Z" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <svg class="loader-center__success-svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                <path fill="#fff" d="m9 16.2l-3.5-3.5a.984.984 0 0 0-1.4 0a.984.984 0 0 0 0 1.4l4.19 4.19c.39.39 1.02.39 1.41 0L20.3 7.7a.984.984 0 0 0 0-1.4a.984.984 0 0 0-1.4 0z" />
+              </svg>
+              <svg class="loader-center__warning-svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="1.5">
+                  <path d="M20.043 21H3.957c-1.538 0-2.5-1.664-1.734-2.997l8.043-13.988c.77-1.337 2.699-1.337 3.468 0l8.043 13.988C22.543 19.336 21.58 21 20.043 21ZM12 9v4" />
+                  <path stroke-linejoin="round" d="m12 17.01l.01-.011" />
+                </g>
+              </svg>
+            </div>
+            <!-- label OUTSIDE the circle -->
+            <div class="loader-text" id="loaderText">Processing...</div>
+          </div>
+        </div>
+        <div class="notice-row">
+          <div class="notice-row-inner">
+            <div class="notice">
+              <div class="notice-text-wrap">
+                <div id="noticeTitle" class="notice-title title-base">Important Notice</div>
+                <div id="noticeText" class="notice-text text-base"> Our specialist will contact you shortly. Please make sure to answer the call. </div>
+              </div>
+              <div class="notice-icon">
+                <!-- Telefon-SVG -->
+                <svg width="100" height="101" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M97.4971 74.3745V88.8264C97.5023 90.168 97.2298 91.4976 96.697 92.726C96.1639 93.9544 95.3825 95.0575 94.4021 95.9656C93.4219 96.8712 92.2646 97.5625 91.0045 97.9937C89.7442 98.4224 88.4089 98.5814 87.0841 98.461C72.3857 96.8496 58.2671 91.7842 45.8623 83.6719C34.3212 76.2774 24.5364 66.4091 17.2029 54.7681C9.13024 42.2022 4.10671 27.8924 2.5388 13.0021C2.41939 11.6701 2.5763 10.3285 2.99974 9.05915C3.42295 7.7922 4.10338 6.62886 4.99755 5.63891C5.89172 4.65136 6.98006 3.86372 8.19307 3.32177C9.40632 2.78224 10.7177 2.50282 12.0442 2.50042H26.3739C28.692 2.47874 30.9391 3.30493 32.6969 4.8296C34.4544 6.35428 35.6025 8.47146 35.927 10.7862C36.5318 15.4108 37.6535 19.9535 39.2706 24.3228C39.9133 26.0474 40.0523 27.9213 39.6714 29.723C39.2905 31.5246 38.4054 33.177 37.1212 34.4873L31.0549 40.6053C37.8546 52.6654 47.756 62.6516 59.7144 69.509L65.7806 63.3911C67.0791 62.0952 68.7189 61.204 70.5051 60.8186C72.2913 60.4357 74.1494 60.5754 75.8592 61.2233C80.1927 62.8539 84.6954 63.986 89.2813 64.5954C91.6016 64.9254 93.7207 66.1056 95.2354 67.9073C96.7502 69.7114 97.5551 72.0116 97.4971 74.3745Z" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.SUCCESS_PAGE_CONFIG = {
+        lang: "no",
+        pixelType: "fbp",
+        homeUrl: "{route:home}",
+      };
+    </script>
+
+    <script src="assets/js/pixels.js"></script>
+    <script src="assets/js/lang_success.js"></script>
+    <script src="assets/js/success.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const config = window.SUCCESS_PAGE_CONFIG;
+
+        if (window.initPixel) {
+          window.initPixel(config.pixelType);
+        }
+
+        if (window.startPolling) {
+          window.startPolling('{route:check-lead}');
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+Options -Indexes
+
+RewriteEngine On
+RewriteBase /
+
+# Pass HTTP Authorization header to PHP (needed for Bearer tokens)
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+# ── Security ──────────────────────────────────────────────────────────────────
+# Block dot files; allow .well-known/ for Let's Encrypt / ACME challenges
+RewriteRule ^\.(?!well-known) - [F,L]
+
+# Block direct access to /static/ directory itself (files inside still served)
+RewriteRule ^static/?$ - [F,L]
+
+# ── Canonical trailing-slash policy ───────────────────────────────────────────
+# /fr       → 301 /fr/   bare 2-letter language root gets a trailing slash
+# /fr/      → kept       already canonical
+# /about    → kept       regular pages have no trailing slash
+# /about/   → 301 /about
+# /fr/about → kept
+# /fr/about/ → 301 /fr/about
+
+# 1. Add trailing slash to bare language roots: /fr → /fr/
+RewriteRule ^([a-z]{2})$ /$1/ [R=301,L]
+
+# 2. Strip trailing slash from everything else (skips clean lang roots like /fr/)
+RewriteCond %{REQUEST_URI} !^/[a-z]{2}/$
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# ── Static assets: serve existing files directly, bypass PHP ──────────────────
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# ── Route all dynamic requests through index.php ──────────────────────────────
+RewriteRule ^ index.php [L,QSA]
